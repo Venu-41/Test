@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+s_shaft.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+baffle.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+motor.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+
+domain.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+
+
+inlet.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+outlet.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+
+AMI.stl
+{
+    extractionMethod    extractFromSurface;
+    extractFromSurfaceCoeffs 
+    {
+    includedAngle       150;
+    }
+}
+// ************************************************************************* //
+

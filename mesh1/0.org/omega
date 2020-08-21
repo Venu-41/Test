@@ -1,0 +1,77 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform 0.175;
+
+boundaryField
+{
+    AMI_r
+    {
+        type            cyclicAMI;
+        value           $internalField;
+    }
+    AMI_s
+    {
+        type            cyclicAMI;
+        value           $internalField;
+    }
+    baffle
+    {   
+        type            omegaWallFunction;
+        value           uniform 0.175;
+    }
+    r_shaft
+    {
+        type            omegaWallFunction;
+        value           uniform 0.175;
+    }
+    s_shaft
+    {   
+        type            omegaWallFunction;
+        value           uniform 0.175;
+     }
+    impeller
+    {
+        type            omegaWallFunction;
+        value           uniform 0.175;
+    } 
+    motor
+    {
+        type            omegaWallFunction;
+        value           uniform 0.175;
+    } 
+    domain
+    {
+        type            omegaWallFunction;
+        value           uniform 0.175;
+    }    
+    inlet
+    {
+         type            turbulentMixingLengthFrequencyInlet; //In the event of reverse flow, a zero-gradient condition is applied
+         mixingLength    0.35;  // 0.007 * Length of Domain(5 m)
+         value           uniform 0.175;   // placeholder
+    } 
+    outlet
+    {
+        type            zeroGradient;
+    }    
+}
+
+
+// ************************************************************************* //
